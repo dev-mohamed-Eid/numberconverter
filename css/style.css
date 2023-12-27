@@ -1,0 +1,154 @@
+/*--start global rules--*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: fantasy, sans-serif;
+  font-weight: 500;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  padding: 0px;
+  margin: 0px;
+  transition: 500ms ease-out;
+  user-select: none;
+  cursor: default;
+  transition-property: transform, translate, width, border-radius, opacity, background, color, visibility !important;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  scroll-behavior: smooth;
+  color: #fff;
+  font-size: min(1vw, 1vh);
+  overflow: hidden;
+  text-transform: capitalize;
+}
+
+body {
+  background: url("../img/code gif.gif") #000;
+  background-size: cover;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+}
+
+#overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 0;
+}
+
+/*--end global rules--*/
+/* start main */
+main {
+  width: 100%;
+  height: 90%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12vh;
+}
+
+input,
+select,
+output {
+  min-width: 30%;
+  height: 6vh;
+  background: #000;
+  color: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 3.5rem;
+  outline: none;
+  box-shadow: 0 0 5px 4px green;
+  transition: 0.3s;
+}
+
+option {
+  background: #000;
+  color: green;
+}
+
+input:focus,
+select:focus,
+output:focus {
+  box-shadow: 0 0 5px 7px green;
+}
+
+label {
+  text-shadow: 0 0 15px green;
+  color: green;
+  font-size: 4rem;
+  min-width: 30%;
+  display: inline-block;
+}
+
+div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10vw;
+}
+@media (max-width: 700px) {
+  div {
+    flex-direction: column;
+    gap: 2vh;
+  }
+  div label,
+  div input,
+  div select,
+  div output {
+    width: 45%;
+    height: 6vh;
+  }
+}
+
+#error {
+  position: absolute;
+  left: 50%;
+  bottom: 4vh;
+  transform: translateX(-50%);
+  width: 100vw;
+  font-size: 4rem;
+  text-align: center;
+  color: green;
+  text-shadow: 0 0 15px green;
+  opacity: 0;
+}
+#error.flash {
+  animation: flash 1s linear infinite;
+}
+#error i,
+#error i::before {
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: bold;
+}
+@keyframes flash {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* end main */
+
+/*# sourceMappingURL=style.css.map */
